@@ -4,14 +4,19 @@
     box-sizing: border-box;
 }
 
+html, body {
+    font-family: 'Roboto Mono', monospace;
+}
+
 .board-wrapper {
     display: flex;
     flex-direction: column;
     width: 360px;
+    position: relative;
 }
 
 .board-info {
-    background-color: #ccc;
+    background-color: #999;
     width: 100%;
     height: 48px;
     display: flex;
@@ -39,6 +44,31 @@
 
 .board-game__cell:hover {
     opacity: 0.7;
+    cursor: pointer;
+}
+
+.board-game__cell p {
+    display: grid;
+    place-items: center;
+}
+
+.board-game__cell.enable-flag {
+    background-color: red !important;
+}
+
+.pop-up-msg {
+    display: none;
+    background-color: white;
+    position: absolute;
+    padding: 16px;
+    border-radius: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pop-msg {
+    display: block;
 }
 
 

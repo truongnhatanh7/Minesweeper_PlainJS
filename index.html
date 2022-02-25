@@ -5,14 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minesweeper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
     <main id="root">
       <div class="board-wrapper">
         <section class="board-info">
-          <h2 class="board-info__remaining-bombs">10</h2>
-          <button class="board-info__flag"></button>
+          <h2 class="board-info__remaining-bombs">30</h2>
+          <!-- <button class="board-info__flag"></button> -->
+        </section>
+
+        <section class="board__win-info pop-up-msg">
+            <h2 class="board__win-message">You win</h2>
+            <button class="board__win-replay">Play again</button>
+        </section>
+
+        <section class="board__lose-info pop-up-msg">
+            <h2 class="board__lose-message">You lose</h2>
+            <button class="board__lose-replay">Try again</button>
         </section>
 
         <!-- 18x18  board -->
