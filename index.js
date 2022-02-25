@@ -14,6 +14,7 @@ let isOpen = [...Array(18).keys()].map(i => Array(18).fill(false))
 let prevColor = [...Array(18).keys()].map(i => Array(18).fill(""))
 let randomValues = null
 let endGame = false;
+let currentPick = new Set()
 
 main()
 
@@ -21,7 +22,15 @@ function main() {
     cellColoring()
     generateBombs()
     calculateBoard()
-
+    // for (let i = 0; i < 18; i++) {
+    //     for (let j = 0; j < 18; j++) {
+    //         console.log(board[i][j] + " ")
+    //     }
+    //     console.log()
+    // }
+    board.forEach((element) => {
+        console.log(element)
+    })
 }
 
 function cellColoring() {
@@ -40,7 +49,10 @@ function cellColoring() {
             } else {
                 cell.classList.add("enable-flag")
                 currentRemainingFlag.innerHTML = parseInt(currentRemainingFlag.innerHTML) - 1
-                
+                currentPick.add(parseInt(cell.getAttribute("id").substring(5)))
+                if (checkWinningCondition()) {
+                    winMsg.classList.add("pop-msg")
+                }
             }
             
         })
@@ -67,7 +79,15 @@ function cellColoring() {
 }
 
 function checkWinningCondition() {
-
+    let count = 0
+    for (let value of currentPick) {
+        for (let valueRef of randomValues) {
+            if (value == valueRef) {
+                count++
+            }
+        }
+    }
+    return count == randomValues.size
 }
 
 function normalCoordtoYX(coord) {
@@ -75,7 +95,7 @@ function normalCoordtoYX(coord) {
 }
 
 function YXToNormalCoord(y, x) {
-    
+
 }
 
 function random(max = 30, col = 18 * 18) {
@@ -113,7 +133,6 @@ function calculateBoard() {
                 let x = j + dirX[k]
                 let y = i + dirY[k]
                 if (x >= 0 && y >=0 && x < 18 && y < 18) {
-                    // console.log(i,j,y,x)
                     if (board[y][x] === -1) {
                         board[i][j] += 1
                         
@@ -139,11 +158,10 @@ function cellListener() {
     let stringId = this.getAttribute("id")
     let numId = parseInt(stringId.substring(5))
     let cellCoor = {y: Math.floor(numId / 18), x: Math.floor(numId % 18)}
-    console.dir(cellCoor)
+    // console.dir(cellCoor)
     this.innerHTML = `<p>${board[cellCoor.y][cellCoor.x]}</p>`
     this.style.backgroundColor = "#ccc"
     if (board[cellCoor.y][cellCoor.x] === -1) {
-        console.log("fuck")
         loseMsg.classList.add("pop-msg")
     }
     exploreSurroundings(cellCoor.y, cellCoor.x)
@@ -155,7 +173,7 @@ function exploreSurroundings(y, x) {
     }
 
     let tempCell = $("#cell_" + (18 * y + x))
-    console.log(tempCell.getAttribute("id"))
+    // console.log(tempCell.getAttribute("id"))
     isOpen[y][x] = true
     tempCell.innerHTML = `<p>${board[y][x]}</p>`
     tempCell.style.backgroundColor = "#ccc"
