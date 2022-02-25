@@ -8,6 +8,13 @@ html, body {
     font-family: 'Roboto Mono', monospace;
 }
 
+#root {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
 .board-wrapper {
     display: flex;
     flex-direction: column;

@@ -7,7 +7,8 @@ const cells = $$(".board-game__cell")
 const currentRemainingFlag = $(".board-info__remaining-bombs")
 const winMsg = $(".board__win-info")
 const loseMsg = $(".board__lose-info")
-
+const winBtn = $(".board__win-replay")
+const loseBtn = $(".board__lose-replay")
 
 let board = [...Array(18).keys()].map(i => Array(18).fill(0))
 let isOpen = [...Array(18).keys()].map(i => Array(18).fill(false))
@@ -16,18 +17,23 @@ let randomValues = null
 let endGame = false;
 let currentPick = new Set()
 
+winBtn.addEventListener('click', () => location.reload())
+loseBtn.addEventListener('click', () => location.reload())
+
 main()
 
 function main() {
+    console.log("new game")
+    board = [...Array(18).keys()].map(i => Array(18).fill(0))
+    isOpen = [...Array(18).keys()].map(i => Array(18).fill(false))
+    prevColor = [...Array(18).keys()].map(i => Array(18).fill(""))
+    randomValues = null
+    endGame = false;
+    currentPick = new Set()
     cellColoring()
     generateBombs()
     calculateBoard()
-    // for (let i = 0; i < 18; i++) {
-    //     for (let j = 0; j < 18; j++) {
-    //         console.log(board[i][j] + " ")
-    //     }
-    //     console.log()
-    // }
+
     board.forEach((element) => {
         console.log(element)
     })
