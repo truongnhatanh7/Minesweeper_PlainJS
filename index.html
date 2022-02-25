@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <main id="root">
+      <div class="board-wrapper">
+        <section class="board-info">
+          <h2 class="board-info__remaining-bombs">10</h2>
+          <button class="board-info__flag"></button>
+        </section>
+
+        <!-- 18x18  board -->
+        <section class="board-game">
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+
+          <!-- 1 row -->
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+          <div class="board-game__cell"></div>
+        </section>
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
